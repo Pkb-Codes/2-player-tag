@@ -18,6 +18,7 @@ size = Vector2(62, 62)
 [node name="player" type="CharacterBody2D" unique_id=109356372 groups=["players"]]
 collision_layer = 2
 script = ExtResource("1_3vyb7")
+JUMP_VELOCITY = -600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146675304]
 shape = SubResource("RectangleShape2D_sgp6g")
