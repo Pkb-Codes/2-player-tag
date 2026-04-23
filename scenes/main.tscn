@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d26s1oegipi8y"]
+
+[ext_resource type="PackedScene" uid="uid://cjmvldv266esc" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dvu76p37icenu" path="res://scripts/game_manager.gd" id="2_0wfyh"]
+
+[sub_resource type="Gradient" id="Gradient_0wfyh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sugp2"]
+gradient = SubResource("Gradient_0wfyh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+size = Vector2(64.10256, 64)
+
+[node name="main" type="Node" unique_id=242396798]
+
+[node name="player 1" parent="." unique_id=109356372 instance=ExtResource("1_o5qli")]
+position = Vector2(-373, -101)
+is_IT = true
+
+[node name="player2" parent="." unique_id=1265868007 instance=ExtResource("1_o5qli")]
+position = Vector2(-13, -86)
+player_no = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1336424362]
+position = Vector2(-40.00003, 228)
+scale = Vector2(13.816216, -1.4199814)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=757950832]
+texture = SubResource("GradientTexture2D_sugp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2069640757]
+position = Vector2(3.8146973e-06, 0)
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1979470663]
+
+[node name="game_manager" type="Node2D" parent="." unique_id=1462572034]
+position = Vector2(-373, -101)
+script = ExtResource("2_0wfyh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1757956742]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=198261762]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 23.0
+grow_horizontal = 2
