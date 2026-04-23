@@ -39,6 +39,7 @@ shape = SubResource("RectangleShape2D_o5qli")
 [node name="game_manager" type="Node2D" parent="." unique_id=1462572034]
 position = Vector2(-373, -101)
 script = ExtResource("2_0wfyh")
+game_time = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1757956742]
 
