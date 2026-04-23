@@ -7,7 +7,7 @@ func _ready():
 	player1 = get_parent().get_node("player1")
 	player2 = get_parent().get_node("player2")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	global_position = (player1.global_position + player2.global_position)/2
 	var distance = player1.global_position.distance_to(player2.global_position)
 	

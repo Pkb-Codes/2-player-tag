@@ -5,40 +5,121 @@
 [ext_resource type="PackedScene" uid="uid://uw1baa2ok7b2" path="res://scenes/ground.tscn" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://crf8p5ltaefvr" path="res://scripts/camera_2d.gd" id="3_jyhfs"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="main" type="Node" unique_id=242396798]
 
 [node name="player1" parent="." unique_id=109356372 instance=ExtResource("1_o5qli")]
-position = Vector2(-373, -101)
-is_IT = true
+position = Vector2(-200, 200)
 
 [node name="player2" parent="." unique_id=1265868007 instance=ExtResource("1_o5qli")]
-position = Vector2(-13, -86)
+position = Vector2(200, 200)
 player_no = 2
-
-[node name="ground" parent="." unique_id=1299846089 instance=ExtResource("2_sugp2")]
-position = Vector2(0, 300)
-scale = Vector2(32.36, 1)
-
-[node name="ground2" parent="." unique_id=499451330 instance=ExtResource("2_sugp2")]
-position = Vector2(583, 120)
-scale = Vector2(5.1776123, 1)
-
-[node name="ground3" parent="." unique_id=1546178819 instance=ExtResource("2_sugp2")]
-position = Vector2(-564, 120)
-scale = Vector2(5.1776123, 1)
-
-[node name="ground4" parent="." unique_id=1067828054 instance=ExtResource("2_sugp2")]
-position = Vector2(-6, 50)
-scale = Vector2(5.1776123, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1979470663]
 position_smoothing_enabled = true
 script = ExtResource("3_jyhfs")
 
 [node name="game_manager" type="Node2D" parent="." unique_id=1462572034]
-position = Vector2(-373, -101)
 script = ExtResource("2_0wfyh")
 game_time = 10
+
+[node name="level" type="Node2D" parent="." unique_id=609172845]
+
+[node name="ground" parent="level" unique_id=1299846089 instance=ExtResource("2_sugp2")]
+position = Vector2(0, 300)
+scale = Vector2(32.36, 0.5)
+
+[node name="ground5" parent="level" unique_id=1555040835 instance=ExtResource("2_sugp2")]
+position = Vector2(0, 799)
+scale = Vector2(47.89275, 0.5)
+
+[node name="ground2" parent="level" unique_id=499451330 instance=ExtResource("2_sugp2")]
+position = Vector2(583, 120)
+scale = Vector2(5.1776123, 0.5)
+
+[node name="ground3" parent="level" unique_id=1546178819 instance=ExtResource("2_sugp2")]
+position = Vector2(-564, 120)
+scale = Vector2(5.1776123, 0.5)
+
+[node name="ground8" parent="level" unique_id=209183398 instance=ExtResource("2_sugp2")]
+position = Vector2(-1138, 480)
+scale = Vector2(9.526806, 0.5)
+
+[node name="ground23" parent="level" unique_id=1908372650 instance=ExtResource("2_sugp2")]
+position = Vector2(1138, 480)
+scale = Vector2(9.526806, 0.5)
+
+[node name="ground13" parent="level" unique_id=1476623502 instance=ExtResource("2_sugp2")]
+position = Vector2(-1395, -40)
+scale = Vector2(9.526806, 0.5)
+
+[node name="ground22" parent="level" unique_id=398814672 instance=ExtResource("2_sugp2")]
+position = Vector2(1395, -40)
+scale = Vector2(9.526806, 0.5)
+
+[node name="ground9" parent="level" unique_id=2045010546 instance=ExtResource("2_sugp2")]
+position = Vector2(-639, 654)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground21" parent="level" unique_id=1237584220 instance=ExtResource("2_sugp2")]
+position = Vector2(639, 660)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground10" parent="level" unique_id=72241914 instance=ExtResource("2_sugp2")]
+position = Vector2(-361, 480)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground20" parent="level" unique_id=177586356 instance=ExtResource("2_sugp2")]
+position = Vector2(361, 480)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground11" parent="level" unique_id=1921990530 instance=ExtResource("2_sugp2")]
+position = Vector2(-1654, 320)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground19" parent="level" unique_id=877528788 instance=ExtResource("2_sugp2")]
+position = Vector2(1654, 320)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground12" parent="level" unique_id=1322415640 instance=ExtResource("2_sugp2")]
+position = Vector2(-2034, 140)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground18" parent="level" unique_id=65475381 instance=ExtResource("2_sugp2")]
+position = Vector2(2034, 140)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground14" parent="level" unique_id=1677920315 instance=ExtResource("2_sugp2")]
+position = Vector2(-766.0001, -220)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground16" parent="level" unique_id=1832953407 instance=ExtResource("2_sugp2")]
+position = Vector2(766, -220)
+scale = Vector2(3.0485835, 0.5)
+
+[node name="ground6" parent="level" unique_id=337478755 instance=ExtResource("2_sugp2")]
+position = Vector2(-1802, 799)
+scale = Vector2(10.14812, 5.6784005)
+
+[node name="ground17" parent="level" unique_id=1220419819 instance=ExtResource("2_sugp2")]
+position = Vector2(1802, 799)
+scale = Vector2(10.14812, 5.6784005)
+
+[node name="ground7" parent="level" unique_id=2133622935 instance=ExtResource("2_sugp2")]
+position = Vector2(-2152, 3.0517578e-05)
+scale = Vector2(0.8118246, 26.802052)
+
+[node name="ground15" parent="level" unique_id=453612696 instance=ExtResource("2_sugp2")]
+position = Vector2(2152, 0)
+scale = Vector2(0.8118246, 26.802052)
+
+[node name="ground4" parent="level" unique_id=1067828054 instance=ExtResource("2_sugp2")]
+position = Vector2(-6, 50)
+scale = Vector2(5.1776123, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1757956742]
 
@@ -46,7 +127,8 @@ game_time = 10
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -0.5
-offset_right = 0.5
-offset_bottom = 23.0
+offset_top = 61.0
+offset_right = 1.0
+offset_bottom = 84.0
 grow_horizontal = 2
+label_settings = SubResource("LabelSettings_jyhfs")
