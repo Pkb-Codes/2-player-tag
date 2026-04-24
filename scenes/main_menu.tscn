@@ -1,0 +1,852 @@
+[gd_scene format=4 uid="uid://d343vpglqihhh"]
+
+[ext_resource type="Script" uid="uid://b2jkfxh6pnhvx" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bq8iyop6u4377" path="res://sprites/tag_text.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dabevp4gjham7" path="res://sprites/sky.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://b023dv3ul688f" path="res://sprites/red_man.png" id="4_8ln24"]
+[ext_resource type="Texture2D" uid="uid://cv2g20mdsthjn" path="res://sprites/blue_man.png" id="5_oa1go"]
+[ext_resource type="Texture2D" uid="uid://comp3k27xpo7f" path="res://sprites/grass.png" id="5_rtw2f"]
+[ext_resource type="FontFile" uid="uid://bvshlk0cgf0ll" path="res://addons/Font Pack/sigmarcyrillic.otf" id="7_oa1go"]
+[ext_resource type="Texture2D" uid="uid://denf1882p2x58" path="res://sprites/arrow.png" id="8_tbmy8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
+texture = ExtResource("5_rtw2f")
+margins = Vector2i(32, 0)
+separation = Vector2i(48, 0)
+texture_region_size = Vector2i(32, 32)
+0:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jk1qb"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_tbmy8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
+font = ExtResource("7_oa1go")
+font_size = 50
+font_color = Color(0.22745098, 0.58431375, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dd4i"]
+font = ExtResource("7_oa1go")
+font_size = 40
+font_color = Color(0.22745098, 0.58431375, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbmy8"]
+font = ExtResource("7_oa1go")
+font_size = 50
+font_color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
+font = ExtResource("7_oa1go")
+font_size = 40
+font_color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jk1qb"]
+default_font = ExtResource("7_oa1go")
+default_font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgwnu"]
+font = ExtResource("7_oa1go")
+font_size = 30
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="main_menu" type="Node" unique_id=1507263605]
+script = ExtResource("1_l6cm7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1241503233]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1807975455]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="decision_label" type="Label" parent="CanvasLayer/Control" unique_id=1139503789]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="buttons" type="Control" parent="CanvasLayer/Control" unique_id=1796022474]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start_button" type="Button" parent="CanvasLayer/Control/buttons" unique_id=954224800]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 513.0
+offset_top = 288.5
+offset_right = 599.0
+offset_bottom = 319.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="quit_button" type="Button" parent="CanvasLayer/Control/buttons" unique_id=1118588947]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 513.0
+offset_top = 349.0
+offset_right = 599.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="tag" type="Node2D" parent="CanvasLayer" unique_id=1556522148]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/tag" unique_id=127081208]
+position = Vector2(428, 175)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 256)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/tag" unique_id=1200739378]
+position = Vector2(533, 175)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(256, 0, 256, 256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/tag" unique_id=318433755]
+position = Vector2(657, 177)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(512, 0, 256, 256)
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/tag" unique_id=81338548]
+position = Vector2(755, 114)
+rotation = -0.3898999
+scale = Vector2(0.49999994, 0.49999994)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(768, 0, 256, 256)
+
+[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/tag" unique_id=83612047]
+position = Vector2(821, 170.99997)
+rotation = 0.49141347
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(768, 0, 256, 256)
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1880714030]
+position = Vector2(1204.0001, -305.99997)
+scale = Vector2(2.121094, 2.0546875)
+texture = ExtResource("3_bqqt6")
+
+[node name="RedMan" type="Sprite2D" parent="." unique_id=703732769]
+position = Vector2(64, 449)
+rotation = 0.6174736
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_8ln24")
+
+[node name="BlueMan" type="Sprite2D" parent="." unique_id=1339522449]
+position = Vector2(1112, 319)
+rotation = -1.5752488
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_oa1go")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1004215189]
+tile_map_data = PackedByteArray("AAD+/xIAAQADAAEAAAD//xIAAQADAAEAAAAAABIAAQADAAEAAAABABIAAQAAAAEAAAACABIAAQAAAAEAAAADABIAAQAAAAEAAAAEABIAAQAAAAEAAAAFABIAAQAAAAEAAAAGABIAAQAAAAEAAAAHABIAAQAAAAEAAAAIABIAAQAAAAEAAAAJABIAAQAAAAEAAAAKABIAAQAAAAEAAAALABIAAQAAAAEAAAAMABIAAQAAAAEAAAANABIAAQAAAAEAAAANABMAAQADAAEAAAANABQAAQADAAEAAAANABUAAQADAAEAAAAMABUAAQADAAEAAAAMABQAAQADAAEAAAAMABMAAQADAAEAAAD+/xMAAQADAAEAAAD+/xQAAQADAAEAAAD+/xUAAQADAAEAAAD//xMAAQADAAEAAAD//xQAAQADAAEAAAD//xUAAQADAAEAAAAAABMAAQADAAEAAAAAABQAAQADAAEAAAAAABUAAQADAAEAAAABABMAAQADAAEAAAABABQAAQADAAEAAAABABUAAQADAAEAAAACABMAAQADAAEAAAACABQAAQADAAEAAAACABUAAQADAAEAAAADABMAAQADAAEAAAADABQAAQADAAEAAAADABUAAQADAAEAAAAEABMAAQADAAEAAAAEABQAAQADAAEAAAAEABUAAQADAAEAAAAFABMAAQADAAEAAAAFABQAAQADAAEAAAAFABUAAQADAAEAAAAGABMAAQADAAEAAAAGABQAAQADAAEAAAAGABUAAQADAAEAAAAHABMAAQADAAEAAAAHABQAAQADAAEAAAAHABUAAQADAAEAAAAIABMAAQADAAEAAAAIABQAAQADAAEAAAAIABUAAQADAAEAAAAJABMAAQADAAEAAAAJABQAAQADAAEAAAAJABUAAQADAAEAAAAKABMAAQADAAEAAAAKABQAAQADAAEAAAAKABUAAQADAAEAAAALABMAAQADAAEAAAALABQAAQADAAEAAAALABUAAQADAAEAAAAfAAwAAQAAAAEAAAAgAAwAAQAAAAEAAAAhAAwAAQAAAAEAAAAiAAwAAQAAAAEAAAAjAAwAAQAAAAEAAAAkAAwAAQAAAAEAAAAlAAwAAQAAAAEAAAAmAAwAAQAAAAEAAAAnAAwAAQAAAAEAAAAeAAwAAQABAAEAABAdAA0AAQABAAEAABAcAA4AAQABAAEAABAcAA8AAQADAAEAAAAcABAAAQADAAEAAAAcABEAAQADAAEAAAAcABIAAQADAAEAAAAcABMAAQADAAEAAAAcABQAAQADAAEAAAAcABUAAQADAAEAAAAdAA4AAQADAAEAAAAeAA4AAQADAAEAAAAfAA4AAQADAAEAAAAgAA4AAQADAAEAAAAhAA4AAQADAAEAAAAiAA4AAQADAAEAAAAjAA4AAQADAAEAAAAkAA4AAQADAAEAAAAlAA4AAQADAAEAAAAmAA4AAQADAAEAAAAnAA4AAQADAAEAAAAeAA0AAQADAAEAAAAfAA0AAQADAAEAAAAgAA0AAQADAAEAAAAhAA0AAQADAAEAAAAiAA0AAQADAAEAAAAjAA0AAQADAAEAAAAkAA0AAQADAAEAAAAlAA0AAQADAAEAAAAmAA0AAQADAAEAAAAnAA0AAQADAAEAAAAdAA8AAQADAAEAAAAdABAAAQADAAEAAAAdABEAAQADAAEAAAAdABIAAQADAAEAAAAdABMAAQADAAEAAAAdABQAAQADAAEAAAAdABUAAQADAAEAAAAeAA8AAQADAAEAAAAeABAAAQADAAEAAAAeABEAAQADAAEAAAAeABIAAQADAAEAAAAeABMAAQADAAEAAAAeABQAAQADAAEAAAAeABUAAQADAAEAAAAfAA8AAQADAAEAAAAfABAAAQADAAEAAAAfABEAAQADAAEAAAAfABIAAQADAAEAAAAfABMAAQADAAEAAAAfABQAAQADAAEAAAAfABUAAQADAAEAAAAgAA8AAQADAAEAAAAgABAAAQADAAEAAAAgABEAAQADAAEAAAAgABIAAQADAAEAAAAgABMAAQADAAEAAAAgABQAAQADAAEAAAAgABUAAQADAAEAAAAhAA8AAQADAAEAAAAhABAAAQADAAEAAAAhABEAAQADAAEAAAAhABIAAQADAAEAAAAhABMAAQADAAEAAAAhABQAAQADAAEAAAAhABUAAQADAAEAAAAiAA8AAQADAAEAAAAiABAAAQADAAEAAAAiABEAAQADAAEAAAAiABIAAQADAAEAAAAiABMAAQADAAEAAAAiABQAAQADAAEAAAAiABUAAQADAAEAAAAjAA8AAQADAAEAAAAjABAAAQADAAEAAAAjABEAAQADAAEAAAAjABIAAQADAAEAAAAjABMAAQADAAEAAAAjABQAAQADAAEAAAAjABUAAQADAAEAAAAkAA8AAQADAAEAAAAkABAAAQADAAEAAAAkABEAAQADAAEAAAAkABIAAQADAAEAAAAkABMAAQADAAEAAAAkABQAAQADAAEAAAAkABUAAQADAAEAAAAlAA8AAQADAAEAAAAlABAAAQADAAEAAAAlABEAAQADAAEAAAAlABIAAQADAAEAAAAlABMAAQADAAEAAAAlABQAAQADAAEAAAAlABUAAQADAAEAAAAmAA8AAQADAAEAAAAmABAAAQADAAEAAAAmABEAAQADAAEAAAAmABIAAQADAAEAAAAmABMAAQADAAEAAAAmABQAAQADAAEAAAAmABUAAQADAAEAAAAnAA8AAQADAAEAAAAnABAAAQADAAEAAAAnABEAAQADAAEAAAAnABIAAQADAAEAAAAnABMAAQADAAEAAAAnABQAAQADAAEAAAAnABUAAQADAAEAAAAAABEAAQABAAEAAAD//xAAAQABAAEAAAD+/w8AAQABAAEAAAD+/xEAAQADAAEAAAD//xEAAQADAAEAAAD+/xAAAQADAAEAAAA=")
+tile_set = SubResource("TileSet_jk1qb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=860173949]
+position = Vector2(576, 324)
+
+[node name="yess_text" type="Node2D" parent="." unique_id=1649240890]
+position = Vector2(-221, 512)
+
+[node name="TagText" type="Sprite2D" parent="yess_text" unique_id=86911117]
+position = Vector2(-984, -651)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(1039.8809, 0, 1058.1191, 264)
+
+[node name="TagText2" type="Sprite2D" parent="yess_text" unique_id=1593475683]
+position = Vector2(-660, -648)
+texture = ExtResource("2_ekxnf")
+region_enabled = true
+region_rect = Rect2(1851.9741, 0, 246.02588, 264)
+
+[node name="Sky2" type="Sprite2D" parent="." unique_id=1136218860]
+position = Vector2(4446, -306)
+scale = Vector2(2.121094, 2.0546875)
+texture = ExtResource("3_bqqt6")
+
+[node name="instructions_page" type="Node2D" parent="." unique_id=1814838352]
+position = Vector2(3129, -1000)
+scale = Vector2(0.6, 0.6)
+
+[node name="blue" type="ColorRect" parent="instructions_page" unique_id=113457489]
+offset_left = 600.0
+offset_right = 1080.0
+offset_bottom = 740.0
+color = Color(0, 0, 0, 1)
+
+[node name="blue_ins" type="ColorRect" parent="instructions_page/blue" unique_id=1770377966]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 472.0
+offset_bottom = 734.0
+color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+
+[node name="BlueMan2" type="Sprite2D" parent="instructions_page/blue/blue_ins" unique_id=1126339064]
+position = Vector2(232, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_oa1go")
+
+[node name="blue_label" type="Label" parent="instructions_page/blue/blue_ins" unique_id=282556384]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -201.0
+offset_top = 50.0
+offset_right = 201.0
+offset_bottom = 126.0
+grow_horizontal = 2
+text = "PLAYER BLUE"
+label_settings = SubResource("LabelSettings_jk1qb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="instructions_page/blue/blue_ins" unique_id=795424728]
+
+[node name="ColorRect5" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=1832751987]
+anchors_preset = -1
+anchor_left = 1.2349138
+anchor_top = 0.42148757
+anchor_right = 1.2349138
+anchor_bottom = 0.42148757
+offset_left = 40.0
+offset_top = 383.0
+offset_right = 100.0
+offset_bottom = 443.0
+grow_vertical = 2
+
+[node name="ColorRect6" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=1200554309]
+anchors_preset = -1
+anchor_left = 1.2349138
+anchor_top = 0.42148757
+anchor_right = 1.2349138
+anchor_bottom = 0.42148757
+offset_left = 40.0
+offset_top = 463.0
+offset_right = 100.0
+offset_bottom = 523.0
+grow_vertical = 2
+
+[node name="ColorRect7" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=640973510]
+anchors_preset = -1
+anchor_left = 1.2349138
+anchor_top = 0.42148757
+anchor_right = 1.2349138
+anchor_bottom = 0.42148757
+offset_left = 40.0
+offset_top = 543.0
+offset_right = 100.0
+offset_bottom = 603.0
+grow_vertical = 2
+
+[node name="ColorRect8" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=757745850]
+anchors_preset = -1
+anchor_left = 1.2349138
+anchor_top = 0.42148757
+anchor_right = 1.2349138
+anchor_bottom = 0.42148757
+offset_left = 40.0
+offset_top = 623.0
+offset_right = 100.0
+offset_bottom = 683.0
+grow_vertical = 2
+
+[node name="ColorRect9" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=2075536155]
+anchors_preset = -1
+anchor_left = 1.2521552
+anchor_top = 0.42561984
+anchor_right = 1.2521552
+anchor_bottom = 0.42561984
+offset_left = 43.0
+offset_top = 386.0
+offset_right = 103.0
+offset_bottom = 446.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="instructions_page/blue/blue_ins/Node2D/ColorRect9" unique_id=1973605986]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -27.5
+offset_right = 20.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "W"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="ColorRect10" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=116725670]
+anchors_preset = -1
+anchor_left = 1.2521552
+anchor_top = 0.42561984
+anchor_right = 1.2521552
+anchor_bottom = 0.42561984
+offset_left = 43.0
+offset_top = 466.0
+offset_right = 103.0
+offset_bottom = 526.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="instructions_page/blue/blue_ins/Node2D/ColorRect10" unique_id=1299964400]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="ColorRect11" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=1670776157]
+anchors_preset = -1
+anchor_left = 1.2521552
+anchor_top = 0.42561984
+anchor_right = 1.2521552
+anchor_bottom = 0.42561984
+offset_left = 43.0
+offset_top = 546.0
+offset_right = 103.0
+offset_bottom = 606.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="instructions_page/blue/blue_ins/Node2D/ColorRect11" unique_id=1863995603]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "D"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="ColorRect12" type="ColorRect" parent="instructions_page/blue/blue_ins/Node2D" unique_id=1636423007]
+anchors_preset = -1
+anchor_left = 1.2521552
+anchor_top = 0.42561984
+anchor_right = 1.2521552
+anchor_bottom = 0.42561984
+offset_left = 43.0
+offset_top = 626.0
+offset_right = 103.0
+offset_bottom = 686.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.87058824, 0.2784314, 0.24705882, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="instructions_page/blue/blue_ins/Node2D/ColorRect12" unique_id=1308958776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "s"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label2" type="Label" parent="instructions_page/blue/blue_ins" unique_id=550608401]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 21.0
+offset_right = 44.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "JUMP"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label3" type="Label" parent="instructions_page/blue/blue_ins" unique_id=812928643]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = 101.0
+offset_right = 40.5
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LEFT"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label4" type="Label" parent="instructions_page/blue/blue_ins" unique_id=1996622506]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = 181.0
+offset_right = 40.5
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RIGHT"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label5" type="Label" parent="instructions_page/blue/blue_ins" unique_id=17128058]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = 261.0
+offset_right = 40.5
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DASH"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label6" type="Label" parent="instructions_page/blue/blue_ins" unique_id=1833383294]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = 261.0
+offset_right = -63.5
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label7" type="Label" parent="instructions_page/blue/blue_ins" unique_id=940504853]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = 181.0
+offset_right = -63.5
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label8" type="Label" parent="instructions_page/blue/blue_ins" unique_id=1274593733]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = 101.0
+offset_right = -63.5
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Label9" type="Label" parent="instructions_page/blue/blue_ins" unique_id=1537276390]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = 21.0
+offset_right = -63.5
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="red" type="ColorRect" parent="instructions_page" unique_id=733603134]
+offset_right = 480.0
+offset_bottom = 740.0
+color = Color(0, 0, 0, 1)
+
+[node name="red_ins" type="ColorRect" parent="instructions_page/red" unique_id=1568120995]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 472.0
+offset_bottom = 734.0
+color = Color(0.22745098, 0.58431375, 1, 1)
+
+[node name="RedMan" type="Sprite2D" parent="instructions_page/red/red_ins" unique_id=1294349525]
+position = Vector2(232, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_8ln24")
+
+[node name="red_label" type="Label" parent="instructions_page/red/red_ins" unique_id=1781563227]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 50.0
+offset_right = 186.0
+offset_bottom = 126.0
+grow_horizontal = 2
+text = "PLAYER RED"
+label_settings = SubResource("LabelSettings_tbmy8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="instructions_page/red/red_ins" unique_id=830647937]
+
+[node name="ColorRect" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=746601055]
+anchors_preset = -1
+anchor_top = 0.4214876
+anchor_bottom = 0.4214876
+offset_left = 40.0
+offset_top = 383.0
+offset_right = 100.0
+offset_bottom = 443.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=608591451]
+anchors_preset = -1
+anchor_top = 0.4214876
+anchor_bottom = 0.4214876
+offset_left = 40.0
+offset_top = 463.0
+offset_right = 100.0
+offset_bottom = 523.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=746439199]
+anchors_preset = -1
+anchor_top = 0.4214876
+anchor_bottom = 0.4214876
+offset_left = 40.0
+offset_top = 543.0
+offset_right = 100.0
+offset_bottom = 603.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=541961135]
+anchors_preset = -1
+anchor_top = 0.4214876
+anchor_bottom = 0.4214876
+offset_left = 40.0
+offset_top = 623.0
+offset_right = 100.0
+offset_bottom = 683.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=236073117]
+anchors_preset = -1
+anchor_left = 0.010775862
+anchor_top = 0.42561984
+anchor_right = 0.010775862
+anchor_bottom = 0.42561984
+offset_left = 45.0
+offset_top = 386.0
+offset_right = 105.0
+offset_bottom = 446.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.22745098, 0.58431375, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow" type="Sprite2D" parent="instructions_page/red/red_ins/Node2D/ColorRect5" unique_id=1719595844]
+position = Vector2(27, 30.878008)
+scale = Vector2(0.41666666, 0.46503055)
+texture = ExtResource("8_tbmy8")
+
+[node name="ColorRect6" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=596367290]
+anchors_preset = -1
+anchor_left = 0.010775862
+anchor_top = 0.42561984
+anchor_right = 0.010775862
+anchor_bottom = 0.42561984
+offset_left = 45.0
+offset_top = 466.0
+offset_right = 105.0
+offset_bottom = 526.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.22745098, 0.58431375, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow2" type="Sprite2D" parent="instructions_page/red/red_ins/Node2D/ColorRect6" unique_id=55833900]
+position = Vector2(27, 30.878029)
+rotation = -1.5707964
+scale = Vector2(0.41666666, 0.46503055)
+texture = ExtResource("8_tbmy8")
+
+[node name="ColorRect7" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=1971136769]
+anchors_preset = -1
+anchor_left = 0.010775862
+anchor_top = 0.42561984
+anchor_right = 0.010775862
+anchor_bottom = 0.42561984
+offset_left = 45.0
+offset_top = 546.0
+offset_right = 105.0
+offset_bottom = 606.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.22745098, 0.58431375, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow3" type="Sprite2D" parent="instructions_page/red/red_ins/Node2D/ColorRect7" unique_id=391782584]
+position = Vector2(27, 30.878021)
+rotation = 1.5707964
+scale = Vector2(0.41666666, 0.46503055)
+texture = ExtResource("8_tbmy8")
+
+[node name="ColorRect8" type="ColorRect" parent="instructions_page/red/red_ins/Node2D" unique_id=756002196]
+anchors_preset = -1
+anchor_left = 0.010775862
+anchor_top = 0.42561984
+anchor_right = 0.010775862
+anchor_bottom = 0.42561984
+offset_left = 45.0
+offset_top = 626.0
+offset_right = 105.0
+offset_bottom = 686.0
+grow_vertical = 2
+scale = Vector2(1, 0.8959985)
+color = Color(0.22745098, 0.58431375, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow4" type="Sprite2D" parent="instructions_page/red/red_ins/Node2D/ColorRect8" unique_id=2041087490]
+position = Vector2(27, 30.878021)
+rotation = 3.1415927
+scale = Vector2(0.41666666, 0.46503055)
+texture = ExtResource("8_tbmy8")
+
+[node name="Label10" type="Label" parent="instructions_page/red/red_ins" unique_id=433380835]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "JUMP"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label11" type="Label" parent="instructions_page/red/red_ins" unique_id=252042538]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 101.0
+offset_right = 87.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LEFT"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label12" type="Label" parent="instructions_page/red/red_ins" unique_id=334075270]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 181.0
+offset_right = 109.5
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RIGHT"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label13" type="Label" parent="instructions_page/red/red_ins" unique_id=1023978396]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = 261.0
+offset_right = 101.5
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DASH"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label14" type="Label" parent="instructions_page/red/red_ins" unique_id=537534138]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 261.0
+offset_right = -51.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label15" type="Label" parent="instructions_page/red/red_ins" unique_id=1578939889]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 181.0
+offset_right = -51.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label16" type="Label" parent="instructions_page/red/red_ins" unique_id=147932593]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 101.0
+offset_right = -51.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Label17" type="Label" parent="instructions_page/red/red_ins" unique_id=80058780]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 21.0
+offset_right = -51.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="tag_play_button" type="Button" parent="instructions_page" unique_id=147850913]
+offset_left = 413.3333
+offset_top = 778.3333
+offset_right = 677.3333
+offset_bottom = 907.3333
+theme = SubResource("Theme_jk1qb")
+text = "PLAY"
+
+[node name="Label" type="Label" parent="instructions_page" unique_id=1108631338]
+offset_left = 375.0
+offset_top = 684.99994
+offset_right = 762.0
+offset_bottom = 730.99994
+rotation = 0.18006054
+text = "DOUBLE JUMPS EXIST"
+label_settings = SubResource("LabelSettings_lgwnu")
+
+[connection signal="pressed" from="CanvasLayer/Control/buttons/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/buttons/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="instructions_page/tag_play_button" to="." method="_on_tag_play_button_pressed"]

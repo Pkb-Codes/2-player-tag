@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var IT_indicator = $AnimatedSprite2D
 
 var is_IT = false
-var game_running = true
+var game_running = false
 
 var og_speed
 
@@ -36,6 +36,7 @@ func _ready() -> void:
 	
 	# connect signals
 	$"../game_manager".game_end.connect(_on_game_end)
+	$"../game_manager".game_start.connect(_on_game_start)
 	
 	# set texture
 	var sprite = $Sprite2D
@@ -87,30 +88,31 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 	
-	# jump.
-	if Input.is_action_just_pressed(input_jump):
-		if jump_count == 0:
-			velocity.y = JUMP_VELOCITY
-			jump_count += 1
-		elif jump_count == 1:
-			velocity.y = JUMP_VELOCITY * 0.7
-			jump_count += 1
-	
-	# dash
-	if Input.is_action_just_pressed(input_dash) and dash_cooldown_timer == 0:
-		speed = dash_speed
-		dashing = true
-		await get_tree().create_timer(dash_time).timeout
-		speed = og_speed
-		dash_cooldown_timer = dash_cooldown
-		dashing = false
-	
-	# movement
-	var direction := Input.get_axis(input_left, input_right)
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+	if game_running:
+		# jump.
+		if Input.is_action_just_pressed(input_jump):
+			if jump_count == 0:
+				velocity.y = JUMP_VELOCITY
+				jump_count += 1
+			elif jump_count == 1:
+				velocity.y = JUMP_VELOCITY * 0.7
+				jump_count += 1
+		
+		# dash
+		if Input.is_action_just_pressed(input_dash) and dash_cooldown_timer == 0:
+			speed = dash_speed
+			dashing = true
+			await get_tree().create_timer(dash_time).timeout
+			speed = og_speed
+			dash_cooldown_timer = dash_cooldown
+			dashing = false
+		
+		# movement
+		var direction := Input.get_axis(input_left, input_right)
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
 	
 	move_and_slide()
 
@@ -120,7 +122,11 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 		body.cooldown = max_cooldown
 		body.is_IT = true
 
+func _on_game_start():
+	game_running = true
+
 func _on_game_end():
 	game_running = false
+	self.velocity = Vector2.ZERO
 	if !is_IT:
-		print("player", player_no, " wins")
+		$"../game_manager".winner = player_no

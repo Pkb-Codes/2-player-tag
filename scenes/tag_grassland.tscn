@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://crf8p5ltaefvr" path="res://scripts/camera_2d.gd" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://b023dv3ul688f" path="res://sprites/red_man.png" id="3_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://comp3k27xpo7f" path="res://sprites/grass.png" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://5jsn3n1qiaev" path="res://scenes/ui.tscn" id="8_ci5my"]
 [ext_resource type="PackedScene" uid="uid://c6odksuvrfono" path="res://scenes/jump_pad.tscn" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://bbjm5dwj26xkw" path="res://sprites/jump_pad.png" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://1viv2aj001p" path="res://sprites/jump_pad_activated.png" id="10_choun"]
@@ -42,11 +43,6 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/4 = SubResource("TileSetAtlasSource_tipki")
 
-[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
-font_size = 32
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-
 [node name="tag_grassland" type="Node" unique_id=242396798]
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1677931038]
@@ -73,22 +69,13 @@ sprite_texture = ExtResource("3_o6xl0")
 
 [node name="game_manager" type="Node2D" parent="." unique_id=1462572034]
 script = ExtResource("2_0wfyh")
+game_time = 12
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1979470663]
 position_smoothing_enabled = true
 script = ExtResource("3_jyhfs")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1757956742]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=198261762]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_top = 61.0
-offset_right = 1.0
-offset_bottom = 84.0
-grow_horizontal = 2
-label_settings = SubResource("LabelSettings_jyhfs")
+[node name="UI" parent="." unique_id=34043869 instance=ExtResource("8_ci5my")]
 
 [node name="jump_pad" parent="." unique_id=670693780 instance=ExtResource("8_tipki")]
 position = Vector2(-2464, 1440)
