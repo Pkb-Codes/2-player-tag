@@ -12,5 +12,5 @@ func _process(_delta: float) -> void:
 	var distance = player1.global_position.distance_to(player2.global_position)
 	
 	if distance > 400:
-		var zoom_factor = 1.2 - clamp(distance / 2000, 0, 0.8)
+		var zoom_factor = 1.25 - clamp(distance / 1500, 0, 1)
 		zoom = Vector2(zoom_factor, zoom_factor)

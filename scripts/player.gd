@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 @export var speed = 300.0
-@export var JUMP_VELOCITY = -500.0
+@export var JUMP_VELOCITY = -600.0
 @export var dash_cooldown = 1
 @export var dash_speed = 5000
 @export var player_no = 1
 @export var sprite_texture : Texture
 
-@onready var label = $Label
+@onready var IT_indicator = $AnimatedSprite2D
 
 var is_IT = false
 var game_running = true
@@ -39,8 +39,9 @@ func _ready() -> void:
 	
 	# set texture
 	var sprite = $Sprite2D
-	#sprite.texture = sprite_texture
-	
+	if sprite_texture != null:
+		sprite.texture = sprite_texture
+		
 	# configuring input based on player number
 	if player_no == 1:
 		input_left = "p1_left"
@@ -56,9 +57,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# change label
 	if is_IT:
-		label.text = "IT"
+		IT_indicator.visible = true
 	else:
-		label.text = ""
+		IT_indicator.visible = false
 	
 	# run cooldown to 0
 	if cooldown > 0:
