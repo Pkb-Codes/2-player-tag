@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b023dv3ul688f" path="res://sprites/red_man.png" id="1_x4jx1"]
 [ext_resource type="FontFile" uid="uid://bvshlk0cgf0ll" path="res://addons/Font Pack/sigmarcyrillic.otf" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://cv2g20mdsthjn" path="res://sprites/blue_man.png" id="2_yev5y"]
-[ext_resource type="AudioStream" uid="uid://ddecrkkisp8qi" path="res://timer.mp3" id="4_gdt2y"]
+[ext_resource type="AudioStream" uid="uid://ddecrkkisp8qi" path="res://audio/timer.mp3" id="4_gdt2y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
 font_size = 32
@@ -40,7 +40,6 @@ offset_bottom = 84.0
 grow_horizontal = 2
 pivot_offset = Vector2(10, 23)
 size_flags_horizontal = 4
-text = "0"
 label_settings = SubResource("LabelSettings_jyhfs")
 
 [node name="red_win" type="ColorRect" parent="." unique_id=293693439]

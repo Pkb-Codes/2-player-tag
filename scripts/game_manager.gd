@@ -17,7 +17,7 @@ var blue_limit = 1000
 var game_timer = 0
 var game_running = false
 var timer_audio_playing = false
-var start_time = 0
+var start_time = 5
 var start_timer = 0
 var last_second = -1
 

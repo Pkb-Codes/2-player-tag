@@ -69,7 +69,6 @@ sprite_texture = ExtResource("3_o6xl0")
 
 [node name="game_manager" type="Node2D" parent="." unique_id=1462572034]
 script = ExtResource("2_0wfyh")
-game_time = 12
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1979470663]
 position_smoothing_enabled = true

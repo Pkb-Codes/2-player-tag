@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://comp3k27xpo7f" path="res://sprites/grass.png" id="5_rtw2f"]
 [ext_resource type="FontFile" uid="uid://bvshlk0cgf0ll" path="res://addons/Font Pack/sigmarcyrillic.otf" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://denf1882p2x58" path="res://sprites/arrow.png" id="8_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dhxmw48yl3eny" path="res://sprites/nope_text.png" id="9_jk1qb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
 texture = ExtResource("5_rtw2f")
@@ -194,6 +195,22 @@ position = Vector2(-660, -648)
 texture = ExtResource("2_ekxnf")
 region_enabled = true
 region_rect = Rect2(1851.9741, 0, 246.02588, 264)
+
+[node name="nope_text" type="Node2D" parent="." unique_id=1765914336]
+position = Vector2(300, 200.00002)
+rotation = -0.5600338
+
+[node name="TagText3" type="Sprite2D" parent="nope_text" unique_id=1254753601]
+position = Vector2(2005, -139)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("9_jk1qb")
+
+[node name="TagText4" type="Sprite2D" parent="nope_text" unique_id=1496536827]
+position = Vector2(2429, -136)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("9_jk1qb")
+region_enabled = true
+region_rect = Rect2(299.32162, 2.9162369, 35.516724, 68.30141)
 
 [node name="Sky2" type="Sprite2D" parent="." unique_id=1136218860]
 position = Vector2(4446, -306)

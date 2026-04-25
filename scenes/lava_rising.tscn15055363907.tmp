@@ -1,0 +1,175 @@
+[gd_scene format=4 uid="uid://b54g5p3cdoopn"]
+
+[ext_resource type="Texture2D" uid="uid://deylvrf2vj7qr" path="res://sprites/wall-BG.png" id="1_pedn2"]
+[ext_resource type="PackedScene" uid="uid://cjmvldv266esc" path="res://scenes/player.tscn" id="2_6p6d8"]
+[ext_resource type="Texture2D" uid="uid://cv2g20mdsthjn" path="res://sprites/blue_man.png" id="3_gtvd8"]
+[ext_resource type="Texture2D" uid="uid://dql5hrla26r1j" path="res://sprites/platforms.png" id="4_gtvd8"]
+[ext_resource type="Texture2D" uid="uid://b023dv3ul688f" path="res://sprites/red_man.png" id="4_i0s84"]
+[ext_resource type="Script" uid="uid://df4222spay0mj" path="res://scripts/lava_game_manager.gd" id="5_i0s84"]
+[ext_resource type="Script" uid="uid://b52stdnco0px6" path="res://scripts/lava_cam.gd" id="5_vrv8s"]
+[ext_resource type="Texture2D" uid="uid://d1byefvsd2ly8" path="res://sprites/lava.png" id="8_gtvd8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qndiq"]
+texture = ExtResource("4_gtvd8")
+margins = Vector2i(24, 7)
+separation = Vector2i(20, 0)
+texture_region_size = Vector2i(220, 20)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-110, -10, 110, -10, 110, 10, -110, 10)
+1:2/next_alternative_id = 2
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-110, -10, 110, -10, 110, 10, -110, 10)
+1:2/1 = 1
+1:2/1/transpose = true
+1:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8.467133, -108.94346, 7.338135, -109.507935, 7.3381653, 111.201355, -9.031555, 111.201355)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-110, -10, 110, -10, 92.98697, 10, -100.00145, 10)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-110, -10, 110, -10, 92.98697, 10, -100.00145, 10)
+
+[sub_resource type="TileSet" id="TileSet_3w444"]
+tile_size = Vector2i(220, 20)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qndiq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0s84"]
+atlas = ExtResource("8_gtvd8")
+region = Rect2(32, 32, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt6go"]
+atlas = ExtResource("8_gtvd8")
+region = Rect2(480, 32, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yqw0"]
+atlas = ExtResource("8_gtvd8")
+region = Rect2(928, 32, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2evv"]
+atlas = ExtResource("8_gtvd8")
+region = Rect2(1376, 32, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hu164"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0s84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt6go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yqw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2evv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="lava_rising" type="Node" unique_id=1902400977]
+
+[node name="BG" type="Node2D" parent="." unique_id=1752734962]
+
+[node name="WallBg" type="Sprite2D" parent="BG" unique_id=335606856]
+position = Vector2(-569, -23)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg2" type="Sprite2D" parent="BG" unique_id=1883395685]
+position = Vector2(1270, -23)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg3" type="Sprite2D" parent="BG" unique_id=849786472]
+position = Vector2(-569, -1825)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg4" type="Sprite2D" parent="BG" unique_id=1658482127]
+position = Vector2(1270, -1825)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg5" type="Sprite2D" parent="BG" unique_id=286688242]
+position = Vector2(-569, -3632)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg6" type="Sprite2D" parent="BG" unique_id=527676790]
+position = Vector2(1270, -3632)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg7" type="Sprite2D" parent="BG" unique_id=1243280870]
+position = Vector2(-569, -5434)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="WallBg8" type="Sprite2D" parent="BG" unique_id=1539098011]
+position = Vector2(1270, -5434)
+scale = Vector2(4, 4)
+texture = ExtResource("1_pedn2")
+
+[node name="player1" parent="." unique_id=109356372 instance=ExtResource("2_6p6d8")]
+position = Vector2(117, 75)
+sprite_texture = ExtResource("3_gtvd8")
+
+[node name="player2" parent="." unique_id=787154232 instance=ExtResource("2_6p6d8")]
+position = Vector2(549, 71)
+sprite_texture = ExtResource("4_i0s84")
+
+[node name="lava_cam" type="Camera2D" parent="." unique_id=891601362]
+position = Vector2(334, 60)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("5_vrv8s")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=574410470]
+tile_map_data = PackedByteArray("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AAACAFn/AAAAAAQAAAADAFj/AAABAAQAAAABAFD/AAABAAQAAAACAEr/AAABAAQAAAD//07/AAABAAQAAAD8/1P/AAAAAAQAAAD8/0j/AAAAAAQAAAD+/0b/AAABAAQAAAAAAED/AAAAAAQAAAABADf/AAABAAQAAAD+/zn/AAAAAAQAAAD9/zr/AAAAAAQAAAD8/zz/AAABAAQAAAD+/zD/AAAAAAQAAAD//yz/AAABAAQAAAAAACz/AAAAAAQAAAD9/yb/AAAAAAQAAAD8/yT/AAABAAQAAAADACj/AAABAAQAAAAFACX/AAABAAQAAAAFADL/AAAAAAQAAAAEADn/AAAAAAQAAAADAD//AAAAAAQAAAAGADn/AAAAAAQAAAAGAE//AAABAAQAAAAFAE//AAABAAQAAAAEAFX/AAAAAAQAAAAFAFf/AAABAAQAAAAGAGH/AAAAAAQAAAAFAGT/AAABAAQAAAAEAGj/AAAAAAQAAAAEAHH/AAABAAQAAAAGAHf/AAABAAQAAAAEAJH/AAABAAQAAAAFAJP/AAABAAQAAAAGAJL/AAABAAQAAAAGAKL/AAAAAAQAAAAFAKP/AAABAAQAAAAGALX/AAABAAQAAAAEALH/AAAAAAQAAAADALH/AAABAAQAAAAGAL3/AAABAAQAAAAEAL7/AAABAAQAAAAFAMT/AAAAAAQAAAAEAM3/AAAAAAQAAAAGAMv/AAABAAQAAAAFANP/AAAAAAQAAAAEANn/AAAAAAQAAAAFANr/AAAAAAQAAAAGAOH/AAABAAQAAAAEAOX/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_3w444")
+
+[node name="game_manager" type="Node2D" parent="." unique_id=662248742]
+script = ExtResource("5_i0s84")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=124326282]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1068354120]
+position = Vector2(137, 599.00006)
+scale = Vector2(0.7, 0.4)
+sprite_frames = SubResource("SpriteFrames_hu164")
+autoplay = "default"
+frame = 1
+frame_progress = 0.23413128
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1501455720]
+position = Vector2(415.99997, 599)
+scale = Vector2(0.7, 0.4)
+sprite_frames = SubResource("SpriteFrames_hu164")
+autoplay = "default"
+frame = 1
+frame_progress = 0.23413128
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1528109443]
+position = Vector2(694.9999, 599)
+scale = Vector2(0.7, 0.4)
+sprite_frames = SubResource("SpriteFrames_hu164")
+autoplay = "default"
+frame = 1
+frame_progress = 0.23413128
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=217168669]
+position = Vector2(973.9999, 599)
+scale = Vector2(0.7, 0.4)
+sprite_frames = SubResource("SpriteFrames_hu164")
+autoplay = "default"
+frame = 1
+frame_progress = 0.23413128
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1204135895]
+position = Vector2(1253, 599.00006)
+scale = Vector2(0.7, 0.4)
+sprite_frames = SubResource("SpriteFrames_hu164")
+autoplay = "default"
+frame = 1
+frame_progress = 0.23413128
