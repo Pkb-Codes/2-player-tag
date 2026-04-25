@@ -18,6 +18,7 @@ var max_cooldown = 0.5
 var cooldown
 var dash_time = 0.1
 var dash_cooldown_timer
+var dust_timer = 1.0
 var jump_count = 0
 var dashing = false
 
@@ -92,20 +93,25 @@ func _physics_process(delta: float) -> void:
 		# jump.
 		if Input.is_action_just_pressed(input_jump):
 			if jump_count == 0:
+				$jump_particles.restart()
 				velocity.y = JUMP_VELOCITY
 				jump_count += 1
 			elif jump_count == 1:
+				$jump_particles.restart()
 				velocity.y = JUMP_VELOCITY * 0.7
 				jump_count += 1
 		
 		# dash
 		if Input.is_action_just_pressed(input_dash) and dash_cooldown_timer == 0:
+			$dash_particles.process_material.direction = Vector3( -1 * sign(velocity.x), 0, 0)
+			$dash_particles.emitting = true
 			speed = dash_speed
 			dashing = true
 			await get_tree().create_timer(dash_time).timeout
 			speed = og_speed
 			dash_cooldown_timer = dash_cooldown
 			dashing = false
+			$dash_particles.emitting = false
 		
 		# movement
 		var direction := Input.get_axis(input_left, input_right)
@@ -114,6 +120,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 	
+	# movement dust particle effects
+	if is_on_floor() and abs(velocity.x) > 0:
+		$dust_particles.emitting = true
+	else:
+		$dust_particles.emitting = false
+	
 	move_and_slide()
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
@@ -121,6 +133,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 		is_IT = false
 		body.cooldown = max_cooldown
 		body.is_IT = true
+		$IT_sound_player.play()
 
 func _on_game_start():
 	game_running = true

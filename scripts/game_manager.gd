@@ -6,6 +6,7 @@ extends Node2D
 @onready var red_win_box = $"../UI/red_win"
 @onready var blue_win_box = $"../UI/blue_win"
 @onready var play_again_button = $"../UI/play_again_button"
+@onready var timer_audio = $"../UI/timer_audio_player"
 
 var player1
 var player2
@@ -15,8 +16,11 @@ var blue_limit = 1000
 
 var game_timer = 0
 var game_running = false
-var start_time = 5
+var timer_audio_playing = false
+var start_time = 0
 var start_timer = 0
+var last_second = -1
+
 
 signal game_end
 signal game_start
@@ -44,10 +48,17 @@ func _process(delta: float) -> void:
 	if game_running:
 		if game_timer > 0:
 			game_timer -= delta
-			if game_timer < 10:
+			var current_second = int(game_timer)
+			if game_timer < 10 and current_second != last_second:
+				if !timer_audio_playing:
+					timer_audio.play()
+					timer_audio_playing = true
+				last_second = current_second
+				pulse_once()
 				countdown_label.modulate = Color("red")
 		else:
 			game_timer = 0
+			timer_audio.stop()
 		countdown_label.text = str(int(game_timer))
 	else:
 		if winner == 2:
@@ -73,6 +84,11 @@ func select_IT():
 		player1.is_IT = true
 	else:
 		player2.is_IT = true
+
+func pulse_once():
+	var t = create_tween()
+	t.tween_property(countdown_label, "scale", Vector2(1.4, 1.4), 0.1)
+	t.tween_property(countdown_label, "scale", Vector2(1, 1), 0.2)
 
 func _on_play_again_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

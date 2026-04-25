@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b023dv3ul688f" path="res://sprites/red_man.png" id="1_x4jx1"]
 [ext_resource type="FontFile" uid="uid://bvshlk0cgf0ll" path="res://addons/Font Pack/sigmarcyrillic.otf" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://cv2g20mdsthjn" path="res://sprites/blue_man.png" id="2_yev5y"]
+[ext_resource type="AudioStream" uid="uid://ddecrkkisp8qi" path="res://timer.mp3" id="4_gdt2y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
 font_size = 32
@@ -37,6 +38,8 @@ offset_top = 61.0
 offset_right = 1.0
 offset_bottom = 84.0
 grow_horizontal = 2
+pivot_offset = Vector2(10, 23)
+size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_jyhfs")
 
@@ -95,11 +98,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -218.0
-offset_top = -222.0
-offset_right = 219.0
-offset_bottom = -138.0
+offset_left = -250.0
+offset_top = -367.0
+offset_right = 187.0
+offset_bottom = -283.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_yev5y")
 text = "PLAY AGAIN??"
+
+[node name="timer_audio_player" type="AudioStreamPlayer2D" parent="." unique_id=994200041]
+stream = ExtResource("4_gdt2y")
+volume_db = 24.0

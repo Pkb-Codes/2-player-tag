@@ -2,6 +2,59 @@
 
 [ext_resource type="Script" uid="uid://wrkvj8721ctr" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://dm3evrq2bta2d" path="res://sprites/IT_marker.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://cgi8wucajryxh" path="res://sprites/dust.png" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bixas34piqijw" path="res://coin.mp3" id="4_dqkch"]
+
+[sub_resource type="Curve" id="Curve_dqkch"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.76351357, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_qlg0r"]
+curve = SubResource("Curve_dqkch")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qhqgy"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = -10.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, -200, 0)
+scale_min = 0.35
+alpha_curve = SubResource("CurveTexture_qlg0r")
+
+[sub_resource type="Curve" id="Curve_qhqgy"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dqkch"]
+curve = SubResource("Curve_qhqgy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dqkch"]
+particle_flag_disable_z = true
+spread = 10.0
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 9.999997
+scale_min = 0.35
+alpha_curve = SubResource("CurveTexture_dqkch")
+
+[sub_resource type="Curve" id="Curve_qlg0r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5202703, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tuyoq"]
+curve = SubResource("Curve_qlg0r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qlg0r"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 200, 0)
+scale_min = 0.35
+alpha_curve = SubResource("CurveTexture_tuyoq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(64, 64)
@@ -62,6 +115,34 @@ animations = [{
 collision_layer = 2
 script = ExtResource("1_3vyb7")
 
+[node name="dust_particles" type="GPUParticles2D" parent="." unique_id=362194332]
+position = Vector2(0, 22)
+emitting = false
+amount = 20
+texture = ExtResource("3_qhqgy")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_qhqgy")
+
+[node name="dash_particles" type="GPUParticles2D" parent="." unique_id=1426011889]
+position = Vector2(0, 22)
+emitting = false
+amount = 40
+texture = ExtResource("3_qhqgy")
+lifetime = 0.5
+speed_scale = 3.0
+process_material = SubResource("ParticleProcessMaterial_dqkch")
+
+[node name="jump_particles" type="GPUParticles2D" parent="." unique_id=404246371]
+position = Vector2(0, 14)
+emitting = false
+amount = 40
+texture = ExtResource("3_qhqgy")
+lifetime = 0.5
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.85
+process_material = SubResource("ParticleProcessMaterial_qlg0r")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146675304]
 shape = SubResource("RectangleShape2D_g2els")
 
@@ -82,5 +163,9 @@ scale = Vector2(0.2, 0.3148437)
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"float"
 autoplay = "float"
+
+[node name="IT_sound_player" type="AudioStreamPlayer2D" parent="." unique_id=771888193]
+position = Vector2(0, 14)
+stream = ExtResource("4_dqkch")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
