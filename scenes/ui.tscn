@@ -67,9 +67,9 @@ text = "RED WINS"
 label_settings = SubResource("LabelSettings_wm3ai")
 
 [node name="blue_win" type="ColorRect" parent="." unique_id=131384590]
-offset_left = 2000.0
+offset_left = 3000.0
 offset_top = -346.0
-offset_right = 2780.6504
+offset_right = 3780.6504
 offset_bottom = 1084.5625
 rotation = 0.5597931
 color = Color(0.87058824, 0.2784314, 0.24705882, 0.5882353)
