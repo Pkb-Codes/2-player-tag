@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://denf1882p2x58" path="res://sprites/arrow.png" id="8_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://dhxmw48yl3eny" path="res://sprites/nope_text.png" id="9_jk1qb"]
 
+[sub_resource type="Theme" id="Theme_5dd4i"]
+default_font = ExtResource("7_oa1go")
+default_font_size = 32
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
 texture = ExtResource("5_rtw2f")
 margins = Vector2i(32, 0)
@@ -88,33 +92,35 @@ offset_bottom = 40.0
 
 [node name="start_button" type="Button" parent="CanvasLayer/Control/buttons" unique_id=954224800]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.7375
+anchor_right = 0.975
+anchor_bottom = 1.3875
 offset_left = 513.0
 offset_top = 288.5
 offset_right = 599.0
 offset_bottom = 319.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_5dd4i")
 text = "Start"
 metadata/_edit_use_anchors_ = true
 
 [node name="quit_button" type="Button" parent="CanvasLayer/Control/buttons" unique_id=1118588947]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 1.275
+anchor_right = 0.625
+anchor_bottom = 1.925
 offset_left = 513.0
 offset_top = 349.0
 offset_right = 599.0
 offset_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_5dd4i")
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 

@@ -78,5 +78,9 @@ func _process(delta: float) -> void:
 			play_again_button.visible = true
 
 func _on_play_again_button_pressed():
+	if red_won:
+		LevelManager.p2_win += 1
+	else:
+		LevelManager.p1_win += 1
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	pass

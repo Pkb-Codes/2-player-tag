@@ -57,6 +57,9 @@ func decide():
 
 func _on_tag_play_button_pressed() -> void:
 	if game == 1:
-		get_tree().change_scene_to_file("res://scenes/tag_grassland.tscn")
+		if randf() > 0.5:
+			get_tree().change_scene_to_file("res://scenes/tag_grassland.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/tag_stone.tscn")
 	elif game == 2:
 		get_tree().change_scene_to_file("res://scenes/lava_rising.tscn")

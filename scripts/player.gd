@@ -8,11 +8,13 @@ extends CharacterBody2D
 @export var sprite_texture : Texture
 
 @onready var IT_indicator = $AnimatedSprite2D
+@onready var win_counter_label = $win_counter
 
 var is_IT = false
 var game_running = false
 
 var og_speed
+var win_count
 
 var max_cooldown = 0.5
 var cooldown
@@ -30,6 +32,7 @@ var input_dash
 func _ready() -> void:
 	#record original speed of player
 	og_speed = speed
+	
 	
 	#set cooldown to max
 	cooldown = max_cooldown
@@ -50,11 +53,15 @@ func _ready() -> void:
 		input_right = "p1_right"
 		input_jump = "p1_jump"
 		input_dash = "p1_dash"
+		win_count = LevelManager.p1_win
 	else:
 		input_left = "p2_left"
 		input_right = "p2_right"
 		input_jump = "p2_jump"
 		input_dash = "p2_dash"
+		win_count = LevelManager.p2_win
+	win_counter_label.visible = true
+	win_counter_label.text = str(win_count)
 
 func _physics_process(delta: float) -> void:
 	# change label
@@ -137,9 +144,14 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_game_start():
 	game_running = true
+	win_counter_label.visible = false
 
 func _on_game_end():
 	game_running = false
 	self.velocity = Vector2.ZERO
 	if !is_IT:
+		if player_no == 1:
+			LevelManager.p1_win += 1
+		else:
+			LevelManager.p2_win += 1
 		$"../game_manager".winner = player_no
