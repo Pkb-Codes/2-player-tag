@@ -66,6 +66,11 @@ font_size = 30
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_flqon"]
+font = ExtResource("7_oa1go")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="main_menu" type="Node" unique_id=1507263605]
 script = ExtResource("1_l6cm7")
 
@@ -869,6 +874,13 @@ offset_bottom = 730.99994
 rotation = 0.18006054
 text = "DOUBLE JUMPS EXIST"
 label_settings = SubResource("LabelSettings_lgwnu")
+
+[node name="Label" type="Label" parent="." unique_id=1627186392]
+offset_top = 583.0
+offset_right = 597.0
+offset_bottom = 608.0
+text = "please do not play on full screen, UI is broken for full screen"
+label_settings = SubResource("LabelSettings_flqon")
 
 [connection signal="pressed" from="CanvasLayer/Control/buttons/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/buttons/quit_button" to="." method="_on_quit_button_pressed"]
